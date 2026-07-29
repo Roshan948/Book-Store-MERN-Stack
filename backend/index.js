@@ -27,7 +27,7 @@ app.get('/', (request, response) => {
 });
 
 app.use('/books', booksRoute);
-
+console.log(mongoDBURL);
 mongoose
   .connect(mongoDBURL)
   .then(() => {
@@ -37,5 +37,6 @@ mongoose
     });
   })
   .catch((error) => {
-    console.log(error);
+    console.error(error);
+    console.error(error.message);
   });
