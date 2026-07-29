@@ -9,7 +9,7 @@ export default function NavBar() {
             L
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-xl tracking-tight">The Ledger</span>
+            <span className="font-display text-xl tracking-tight">Bookish</span>
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-parchment/60">
               Book Store Catalog
             </span>
@@ -21,8 +21,7 @@ export default function NavBar() {
             to="/"
             end
             className={({ isActive }) =>
-              `px-3 sm:px-4 py-2 rounded-sm text-sm font-body font-medium transition-colors ${
-                isActive ? 'bg-brass text-ink' : 'text-parchment/80 hover:text-parchment hover:bg-white/5'
+              `px-3 sm:px-4 py-2 rounded-sm text-sm font-body font-medium transition-colors ${isActive ? 'bg-brass text-ink' : 'text-parchment/80 hover:text-parchment hover:bg-white/5'
               }`
             }
           >
@@ -31,10 +30,9 @@ export default function NavBar() {
           <NavLink
             to="/acquire"
             className={({ isActive }) =>
-              `px-3 sm:px-4 py-2 rounded-sm text-sm font-body font-semibold border transition-colors ${
-                isActive
-                  ? 'bg-brass text-ink border-brass'
-                  : 'border-brass/60 text-brass-light hover:bg-brass hover:text-ink'
+              `px-3 sm:px-4 py-2 rounded-sm text-sm font-body font-semibold border transition-colors ${isActive
+                ? 'bg-brass text-ink border-brass'
+                : 'border-brass/60 text-brass-light hover:bg-brass hover:text-ink'
               }`
             }
           >
