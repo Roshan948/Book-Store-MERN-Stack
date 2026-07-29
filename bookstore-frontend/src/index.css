@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-parchment text-charcoal font-body antialiased;
+    background-image: radial-gradient(circle at 1px 1px, rgba(22,35,58,0.06) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-ink;
+  }
+  :focus-visible {
+    outline: 2px solid #B08D57;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Punched hole + perforation, the signature catalog-card motif */
+  .catalog-card {
+    @apply relative bg-parchment border border-ink/15 rounded-sm shadow-card transition-all duration-300;
+  }
+  .catalog-card:hover {
+    @apply shadow-card-hover -translate-y-1;
+  }
+  .catalog-card::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background: radial-gradient(circle at 35% 35%, #fff 0%, #E7DCC1 40%, #16233A22 100%);
+    box-shadow: inset 0 1px 2px rgba(22,35,58,0.4);
+  }
+  .perforation {
+    background-image: repeating-linear-gradient(
+      to right,
+      rgba(22,35,58,0.28) 0,
+      rgba(22,35,58,0.28) 4px,
+      transparent 4px,
+      transparent 10px
+    );
+    height: 1px;
+  }
+  .stamp {
+    @apply font-mono uppercase tracking-widest text-[10px] text-burgundy border border-burgundy/50 rounded-sm px-2 py-0.5;
+    transform: rotate(-4deg);
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-ink text-parchment font-body font-semibold text-sm px-5 py-2.5 rounded-sm shadow-card hover:bg-ink-light active:translate-y-px transition-all duration-200;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent border border-ink/30 text-ink font-body font-semibold text-sm px-5 py-2.5 rounded-sm hover:border-ink hover:bg-ink/5 active:translate-y-px transition-all duration-200;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 bg-burgundy text-parchment font-body font-semibold text-sm px-5 py-2.5 rounded-sm shadow-card hover:bg-burgundy-light active:translate-y-px transition-all duration-200;
+  }
+  .field-label {
+    @apply block font-mono text-[11px] uppercase tracking-[0.15em] text-ink/60 mb-1.5;
+  }
+  .field-input {
+    @apply w-full bg-parchment border border-ink/25 rounded-sm px-3.5 py-2.5 text-charcoal font-body placeholder:text-charcoal/35 focus:border-brass focus:ring-1 focus:ring-brass transition-colors duration-150;
+  }
+}
